@@ -26,7 +26,7 @@ router.get('/setores', async (req, res) => {
      res.status(404).end()
 });
 
-router.post('/', async (req, res) => {//cadastrar funcionario
+router.post('/setor/:nome/Func', async (req, res) => {// cadastrar funcionario
     let funcionarios = req.body;
 
     const data = await fs.readFile(global.fileName, 'utf-8');
