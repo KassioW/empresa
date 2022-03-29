@@ -1,16 +1,16 @@
-const express = require('express'); //commons
-const cors = require('cors');
-const routerBiblioteca = require('./empresaRouter')
+const express = require('express'); 
+const routerEmpresa = require('./empresaRouter')
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
 
-global.fileName = 'empregados.json';
+global.funcionarios = 'funcionarios.json';
+global.setores = 'setores.json';
 
 app.use('/empresa', routerEmpresa);
 
-app.use(2022, () => {
-    console.log('ok');
+let port  = 3000
+app.listen(port, () => {
+    console.log('Porta: ' + port);
 })
